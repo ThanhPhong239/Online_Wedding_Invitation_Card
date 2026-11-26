@@ -75,11 +75,23 @@ app.use((req, res, next) => {
 app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: false, limit: "16kb" }));
 
-// Block direct /admin.html access and legacy /admin when ADMIN_PATH is customized
+// Block direct /guests.html, /admin.html, and legacy /admin when ADMIN_PATH is customized
+const NOT_FOUND_HTML_PATH = path.join(PUBLIC_DIR, "404.html");
+
+function sendNotFoundPage(res) {
+  res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
+  return res.status(404).sendFile(NOT_FOUND_HTML_PATH);
+}
+
 app.use((req, res, next) => {
   const reqPath = req.path.toLowerCase();
-  if (reqPath === "/admin.html" || (ADMIN_PATH.toLowerCase() !== "/admin" && (reqPath === "/admin" || reqPath === "/admin/"))) {
-    return res.redirect(302, "/");
+  if (
+    reqPath === "/admin.html" ||
+    reqPath === "/guests.html" ||
+    reqPath === "/404.html" ||
+    (ADMIN_PATH.toLowerCase() !== "/admin" && (reqPath === "/admin" || reqPath === "/admin/"))
+  ) {
+    return sendNotFoundPage(res);
   }
   next();
 });
@@ -720,19 +732,23 @@ app.get([ADMIN_PATH, `${ADMIN_PATH}/`], (req, res) => {
 app.get("/invite/:token", async (req, res) => {
   let guestName = "";
   const token = req.params.token;
-  if (/^[a-f0-9]{32}$/i.test(token)) {
-    try {
-      const [rows] = await db.query(`SELECT name FROM guests WHERE token = ? LIMIT 1`, [token]);
-      if (rows.length > 0 && rows[0].name) guestName = rows[0].name;
-    } catch {
-      // Fall back to default Open Graph metadata if DB is temporarily unavailable
+  if (!/^[a-f0-9]{32}$/i.test(token)) {
+    return sendNotFoundPage(res);
+  }
+  try {
+    const [rows] = await db.query(`SELECT name FROM guests WHERE token = ? LIMIT 1`, [token]);
+    if (rows.length === 0) {
+      return sendNotFoundPage(res);
     }
+    if (rows[0].name) guestName = rows[0].name;
+  } catch {
+    // Fall back to default Open Graph metadata if DB is temporarily unavailable
   }
   return sendGuestPage(req, res, guestName);
 });
 
 app.get("/", (req, res) => {
-  return sendGuestPage(req, res);
+  return sendNotFoundPage(res);
 });
 
 // 404 API Handler
@@ -741,6 +757,11 @@ app.use("/api", (req, res) => {
     success: false,
     message: `API không tồn tại: ${req.method} ${req.originalUrl}`
   });
+});
+
+// 404 Page Handler for any other unknown route
+app.use((req, res) => {
+  return sendNotFoundPage(res);
 });
 
 // =====================================================
