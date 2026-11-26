@@ -1,0 +1,39 @@
+{
+  "name": "wedding-invitation-system",
+  "version": "2.0.0",
+  "description": "High-performance online wedding invitation system running locally with Express & MySQL 8",
+  "main": "server.js",
+  "scripts": {
+    "prestart": "node scripts/local-db.js ensure",
+    "start": "node server.js",
+    "predev": "node scripts/local-db.js ensure",
+    "dev": "node --watch server.js",
+    "db:start": "node scripts/local-db.js start",
+    "db:stop": "node scripts/local-db.js stop",
+    "db:status": "node scripts/local-db.js status"
+  },
+  "keywords": [
+    "wedding",
+    "invitation",
+    "rsvp",
+    "guestbook"
+  ],
+  "author": "Long & Loan",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-mysql-session": "^3.0.3",
+    "express-session": "^1.19.0",
+    "mysql2": "^3.24.2"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "overrides": {
+    "express-mysql-session": {
+      "mysql2": "$mysql2"
+    }
+  }
+}

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Trân trọng kính mời Quý vị đến dự Lễ Thành Hôn của Ngọc Long &amp; Bùi Loan — 24.01.2027." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:site_name" content="Thiệp Cưới Ngọc Long &amp; Bùi Loan" />
+  <meta property="og:title" content="Thiệp Cưới Ngọc Long &amp; Bùi Loan — 24.01.2027" />
+  <meta property="og:description" content="Trân trọng kính mời Quý vị chung vui trong ngày trọng đại của hai gia đình." />
+  <meta property="og:image" content="/images/og-cover.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Thiệp Cưới Ngọc Long &amp; Bùi Loan — 24.01.2027" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Thiệp Cưới Ngọc Long &amp; Bùi Loan — 24.01.2027" />
+  <meta name="twitter:description" content="Trân trọng kính mời Quý vị chung vui trong ngày trọng đại của hai gia đình." />
+  <meta name="twitter:image" content="/images/og-cover.png" />
+  <meta name="theme-color" content="#FAF7F2" />
+  <title>Ngọc Long &amp; Bùi Loan — Thiệp Cưới 24.01.2027</title>
+
+  <link rel="icon" type="image/png" href="/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+  <!-- Google Fonts: Playfair Display, Cormorant Garamond & Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/guests.css?v=20261126" />
+  <noscript>
+    <style>
+      body.intro-locked { overflow: auto !important; }
+      #introDoorsOverlay, #ambientCanvas, #confettiCanvas { display: none !important; }
+      .wedding-main { transform: none !important; }
+      .wedding-card, .qr-split-left, .qr-split-right, .tl-card {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        clip-path: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+<body class="intro-locked">
+  <!-- =========================================================
+       CANVAS CÁNH HOA HỒNG RƠI 3 LỚP CHIỀU SÂU & PHÁO GIẤY
+       ========================================================= -->
+  <canvas id="ambientCanvas" aria-hidden="true"></canvas>
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+  <!-- =========================================================
+       PHẦN 1: INTRO CÁNH CỬA TÁCH ĐÔI 3D (SPLIT DOORS, Z-INDEX: 80)
+       ========================================================= -->
+  <div id="introDoorsOverlay" class="intro-overlay" role="button" tabindex="0" aria-label="Chạm để mở thiệp cưới">
+    <!-- Cánh cửa trái -->
+    <div class="door-panel door-left">
+      <div class="door-frame"></div>
+      <svg class="door-ornament" viewBox="0 0 120 320" fill="none" stroke="#9B7B51" stroke-width="1.4" aria-hidden="true">
+        <path d="M110 20 C 40 60, 40 120, 95 160 C 40 200, 40 260, 110 300" />
+        <path d="M95 160 C 60 150, 42 130, 30 100" />
+        <path d="M95 160 C 60 170, 42 190, 30 220" />
+        <circle cx="30" cy="100" r="4" fill="#C5A880" />
+        <circle cx="30" cy="220" r="4" fill="#C5A880" />
+      </svg>
+    </div>
+
+    <!-- Cánh cửa phải -->
+    <div class="door-panel door-right">
+      <div class="door-frame"></div>
+      <svg class="door-ornament" viewBox="0 0 120 320" fill="none" stroke="#9B7B51" stroke-width="1.4" aria-hidden="true">
+        <path d="M110 20 C 40 60, 40 120, 95 160 C 40 200, 40 260, 110 300" />
+        <path d="M95 160 C 60 150, 42 130, 30 100" />
+        <path d="M95 160 C 60 170, 42 190, 30 220" />
+        <circle cx="30" cy="100" r="4" fill="#C5A880" />
+        <circle cx="30" cy="220" r="4" fill="#C5A880" />
+      </svg>
+    </div>
+
+    <!-- Huy hiệu tròn chính giữa -->
+    <div id="openDoorsTrigger" class="crest-trigger">
+      <div class="crest-circle">
+        <span id="crestSub" class="crest-sub">Wedding Invitation</span>
+        <span id="crestMonogram" class="crest-monogram">L &amp; L</span>
+        <span id="crestDate" class="crest-date">18 . 10 . 2027</span>
+      </div>
+      <p id="guestGreeting" class="crest-guest-greeting">Trân trọng kính mời Quý khách</p>
+      <span class="crest-hint">Chạm để mở thiệp</span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       NHẠC NỀN THẬT CỦA DỰ ÁN + ĐĨA THAN GÓC DƯỚI PHẢI (Z-INDEX: 90)
+       ========================================================= -->
+  <audio id="wedding-music" src="/music/asset.d99013564d0c.mp3" loop preload="none"></audio>
+
+  <button id="musicToggleBtn" type="button" class="music-disc-btn" title="Bật / Tắt nhạc nền cưới" aria-label="Bật hoặc tắt nhạc nền">
+    <div class="disc-inner">
+      <div class="disc-label">♫</div>
+    </div>
+    <span id="musicStatusBadge" class="music-status-badge">×</span>
+  </button>
+
+  <!-- =========================================================
+       PHẦN 2: THIỆP CHÍNH CHIA LÀM 7 Ô ĐỘC LẬP
+       ========================================================= -->
+  <main id="weddingMain" class="wedding-main">
+
+    <!-- =======================================================
+         Ô 01: HERO BANNER (Vén màn & Zoom-out)
+         ======================================================= -->
+    <section id="card-1" data-card="1" class="wedding-card hero-card anim-card-1">
+      <div class="hero-bg-wrap">
+        <img id="heroBgImg"
+             src="/photo-placeholder.svg"
+             alt="Ảnh cưới Ngọc Long và Bùi Loan"
+             class="hero-bg-img"
+             decoding="async" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-inner-border"></div>
+
+      <div class="hero-content">
+        <p id="heroKicker" class="hero-kicker">Trân Trọng Báo Tin Lễ Thành Hôn</p>
+        <h1 class="hero-names">
+          <span id="heroGroomName">Ngọc Long</span>
+          <span class="hero-amp">&amp;</span>
+          <span id="heroBrideName">Bùi Loan</span>
+        </h1>
+        <div class="hero-date-pill">
+          <span id="heroDayOfWeek">THỨ HAI</span>
+          <span>•</span>
+          <span id="heroDateDisplay">18 . 10 . 2027</span>
+        </div>
+        <p id="heroLocation" class="hero-location">Cùng nhau viết tiếp chương hạnh phúc trọn vẹn nhất</p>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         Ô 02: LỜI NGỎ & ĐẾM NGƯỢC (Lật 3D nhẹ)
+         ======================================================= -->
+    <section id="card-2" data-card="2" class="wedding-card anim-card-2 text-center">
+      <p class="section-eyebrow">Save The Date</p>
+      <h2 class="section-title">Lời Ngỏ &amp; Đếm Ngược</h2>
+
+      <div class="invite-guest-banner">
+        <span class="invite-guest-prefix">Trân trọng kính mời</span>
+        <strong id="invitationGuestName" class="invite-guest-name">Quý vị khách quý</strong>
+      </div>
+
+      <div class="gold-divider"></div>
+      <p id="inviteQuote" class="invite-quote">
+        “Tình yêu đẹp nhất không phải là điểm đến hoàn hảo, mà là hành trình ta chọn nắm tay nhau đi qua mọi mùa nắng mưa. Ngọc Long &amp; Bùi Loan vô cùng hạnh phúc được đón tiếp Quý vị đến chung vui trong ngày trọng đại của hai gia đình.”
+      </p>
+
+      <div class="countdown-grid" aria-live="polite">
+        <div class="countdown-box">
+          <div id="cdDays" class="countdown-num">00</div>
+          <div class="countdown-label">Ngày</div>
+        </div>
+        <div class="countdown-box">
+          <div id="cdHours" class="countdown-num">00</div>
+          <div class="countdown-label">Giờ</div>
+        </div>
+        <div class="countdown-box">
+          <div id="cdMinutes" class="countdown-num">00</div>
+          <div class="countdown-label">Phút</div>
+        </div>
+        <div class="countdown-box">
+          <div id="cdSeconds" class="countdown-num">00</div>
+          <div class="countdown-label">Giây</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         Ô 03: CHUYỆN TÌNH YÊU - TIMELINE ĐỘNG
+         ======================================================= -->
+    <section id="card-3" data-card="3" class="wedding-card card-with-topbar anim-card-3">
+      <div class="card-topbar">
+        <button id="btnReplayTimeline" type="button" class="btn-replay-tl">
+          ↻ Xem lại hiệu ứng Timeline
+        </button>
+      </div>
+
+      <div class="text-center">
+        <p class="section-eyebrow">Our Love Story</p>
+        <h2 class="section-title">Chuyện Tình Yêu</h2>
+        <p id="timelineSectionDesc" class="section-desc">
+          Bốn cột mốc đáng nhớ trên hành trình của Ngọc Long &amp; Bùi Loan — trục vàng đồng tự vẽ dần theo nhịp cuộn trang.
+        </p>
+      </div>
+
+      <div id="timelineContainer" class="timeline-container">
+        <div class="timeline-axis-bg"></div>
+        <div id="timelineAxisFill" class="timeline-axis-fill"></div>
+        <div id="timelineList" class="timeline-list"></div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         Ô 04: THÔNG TIN TIỆC CƯỚI & ĐỊA ĐIỂM (Nảy đàn hồi)
+         ======================================================= -->
+    <section id="card-4" data-card="4" class="wedding-card anim-card-4">
+      <div class="text-center">
+        <p class="section-eyebrow">Wedding Events</p>
+        <h2 class="section-title">Thông Tin Tiệc Cưới</h2>
+        <p class="section-desc">
+          Sự hiện diện của Quý vị là niềm vinh hạnh lớn lao của hai gia đình.
+        </p>
+      </div>
+
+      <div id="eventsGrid" class="events-grid"></div>
+    </section>
+
+    <!-- =======================================================
+         Ô 05: ALBUM ẢNH CƯỚI (Rải ảnh Polaroid xoay góc nhẹ)
+         ======================================================= -->
+    <section id="card-5" data-card="5" class="wedding-card anim-card-5">
+      <div class="text-center">
+        <p class="section-eyebrow">Pre-Wedding Gallery</p>
+        <h2 class="section-title">Album Ảnh Cưới</h2>
+        <p id="gallerySectionDesc" class="section-desc">
+          Những khoảnh khắc ngọt ngào lưu giữ tình yêu của Ngọc Long &amp; Bùi Loan. Bấm vào từng bức ảnh để xem phóng to.
+        </p>
+      </div>
+
+      <div id="polaroidGrid" class="polaroid-grid"></div>
+    </section>
+
+    <!-- =======================================================
+         Ô 06: HỘP MỪNG CƯỚI QR (Tách đôi từ giữa ra 2 bên)
+         ======================================================= -->
+    <section id="card-6" data-card="6" class="wedding-card anim-card-6">
+      <div class="text-center">
+        <p class="section-eyebrow">Wedding Gift Box</p>
+        <h2 class="section-title">Hộp Mừng Cưới</h2>
+        <p class="section-desc">
+          Nếu Quý vị ở xa không thể trực tiếp chung vui, tấm lòng chúc phúc của Quý vị luôn là món quà trân quý nhất.
+        </p>
+      </div>
+
+      <div id="qrGrid" class="qr-grid"></div>
+    </section>
+
+    <!-- =======================================================
+         Ô 07: SỔ LƯU BÚT LỜI CHÚC — 3 KIỂU CHUYỂN ĐỔI & RSVP
+         ======================================================= -->
+    <section id="card-7" data-card="7" class="wedding-card anim-card-7">
+      <div class="text-center">
+        <p class="section-eyebrow">Interactive Guestbook &amp; RSVP</p>
+        <h2 class="section-title">Sổ Lưu Bút Lời Chúc</h2>
+        <p id="guestbookSectionDesc" class="section-desc">
+          Hãy lật từng trang lưu bút và gửi lời chúc phúc kèm pháo giấy tới Ngọc Long &amp; Bùi Loan.
+        </p>
+      </div>
+
+      <div class="gb-meta-actions" style="display:flex; justify-content:center; gap:8px; margin:14px 0 18px;">
+        <button id="wishesRefreshBtn" type="button" class="gb-mini-btn" hidden>↻ Làm mới</button>
+        <button id="wishesMoreBtn" type="button" class="gb-mini-btn" hidden>Tải thêm lời chúc cũ</button>
+      </div>
+
+      <!-- SỔ GIẤY LẬT TRANG 3D -->
+      <div id="gbPanel-book" class="book-desk" style="margin-top: 22px;">
+        <div id="bookScene" class="book-scene">
+          <div class="book-cover">
+            <div class="book-pages-wrap">
+              <div id="bookStaticLeft" class="book-static-left"></div>
+              <div id="bookStaticRight" class="book-static-right"></div>
+              <div id="bookSheetsContainer" class="book-sheets-layer"></div>
+              <div class="book-spine"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-controls">
+          <button id="btnBookPrev" type="button" class="book-nav-btn">← Trang trước</button>
+          <span id="bookPageIndicator" class="book-page-indicator">Trang 1 / 4</span>
+          <button id="btnBookNext" type="button" class="book-nav-btn primary">Trang sau →</button>
+        </div>
+      </div>
+
+      <!-- FORM XÁC NHẬN THAM DỰ (RSVP) & GỬI LỜI CHÚC MỚI (DÙNG CHUNG CHO CẢ 3 KIỂU) -->
+      <form id="rsvpForm" class="wish-form" novalidate>
+        <p class="wish-form-heading">
+          Xác Nhận Tham Dự &amp; Gửi Lời Chúc Phúc
+        </p>
+        <p id="rsvpFormSub" class="wish-form-sub">
+          Quý vị có thể xác nhận tham dự nhanh hoặc viết lời chúc phúc dưới đây.
+        </p>
+
+        <!-- Nút xác nhận RSVP 1 chạm -->
+        <div class="quick-rsvp-row" role="group" aria-label="Xác nhận tham dự nhanh">
+          <button type="button" id="attendanceYesBtn" class="quick-rsvp-btn">
+            ✓ Sẽ tham dự chung vui
+          </button>
+          <button type="button" id="attendanceNoBtn" class="quick-rsvp-btn">
+            ✕ Tiếc quá không thể tới
+          </button>
+        </div>
+
+        <div>
+          <div class="form-label-row">
+            <label for="guestWish" class="form-label" style="margin-bottom:0;">Lời Chúc Phúc *</label>
+            <span id="wishCharCount" class="char-counter">0/500</span>
+          </div>
+          <textarea id="guestWish" rows="3" maxlength="500" required class="form-control" style="resize:vertical;"
+                    placeholder="Chúc hai bạn trăm năm hạnh phúc, luôn ngập tràn tiếng cười..."></textarea>
+        </div>
+
+        <p id="wishFormFeedback" class="wish-form-feedback" role="alert" hidden></p>
+
+        <button id="btnSubmitWish" type="submit" class="btn-submit-wish">
+          GỬI LỜI CHÚC
+        </button>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="wedding-footer">
+      <p id="footerNames" class="footer-names">Ngọc Long &amp; Bùi Loan</p>
+      <p id="footerSub" class="footer-sub">18 . 10 . 2027 — Forever Begins Here</p>
+    </footer>
+  </main>
+
+  <!-- =========================================================
+       MODAL LIGHTBOX ALBUM ẢNH (HỖ TRỢ LƯỚT TRÁI/PHẢI & PHÍM TẮT)
+       ========================================================= -->
+  <div id="lightboxModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Xem phóng to ảnh cưới">
+    <div id="lightboxStage" class="modal-box lightbox-box">
+      <button type="button" id="closeLightbox" class="modal-close" aria-label="Đóng">✕</button>
+      <div class="lightbox-media-wrap">
+        <button type="button" id="lightboxPrev" class="lightbox-nav lightbox-prev" aria-label="Ảnh trước">‹</button>
+        <img id="lightboxImg" class="lightbox-img" src="/photo-placeholder.svg" alt="Ảnh cưới phóng to" />
+        <button type="button" id="lightboxNext" class="lightbox-nav lightbox-next" aria-label="Ảnh tiếp theo">›</button>
+      </div>
+      <p id="lightboxCaption" class="lightbox-caption"></p>
+      <span id="lightboxCounter" class="lightbox-counter">1 / 6</span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL BẢN ĐỒ ĐỊA ĐIỂM
+       ========================================================= -->
+  <div id="mapModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Chi tiết địa điểm tiệc cưới">
+    <div class="modal-box">
+      <button type="button" id="closeMapModal" class="modal-close" aria-label="Đóng">✕</button>
+      <p class="section-eyebrow">Chỉ Đường Tiệc Cưới</p>
+      <h3 id="mapModalTitle" class="map-modal-title"></h3>
+      <p id="mapModalTime" class="tl-date" style="margin-bottom:12px;"></p>
+      <p id="mapModalAddress" class="map-modal-address"></p>
+
+      <div class="map-svg-preview" aria-hidden="true">
+        <svg width="100%" height="120" viewBox="0 0 360 120" fill="none">
+          <path d="M10 95 Q 90 85, 160 58 T 350 28" stroke="#C5A880" stroke-width="4" stroke-dasharray="6 6" />
+          <path d="M40 20 Q 120 55, 220 65 T 330 105" stroke="#E2D3BC" stroke-width="3" />
+          <circle cx="180" cy="56" r="18" fill="rgba(114,47,55,0.14)" />
+          <circle cx="180" cy="56" r="8" fill="#722F37" />
+          <circle cx="180" cy="56" r="3" fill="#FAF7F2" />
+        </svg>
+      </div>
+
+      <a id="mapModalLink" href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-outline-gold" style="text-decoration:none;">
+        Mở Google Maps ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- TOAST THÔNG BÁO Ở ĐÁY MÀN HÌNH -->
+  <div id="toastBox" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- SCRIPTS: CONFIG -> REQUEST WRAPPER -> MAIN GUEST LOGIC -->
+  <script src="/wedding-config.js?v=20261126" defer></script>
+  <script src="/request.js?v=20261126" defer></script>
+  <script src="/guests.js?v=20261126" defer></script>
+</body>
+</html>
