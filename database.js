@@ -1,4 +1,5 @@
 const mysql = require("mysql2/promise");
+const fs = require("fs");
 
 function positiveInt(value, fallback) {
   const number = Number(value);
@@ -6,6 +7,12 @@ function positiveInt(value, fallback) {
 }
 
 const host = (process.env.DB_HOST || "127.0.0.1").trim();
+const local = ["localhost", "127.0.0.1", "::1"].includes(host.toLowerCase());
+const tls = process.env.DB_SSL === "true" || (!local && process.env.DB_SSL !== "false");
+const ca = tls
+  ? (process.env.DB_SSL_CA?.replace(/\\n/g, "\n") ||
+    (process.env.DB_SSL_CA_FILE ? fs.readFileSync(process.env.DB_SSL_CA_FILE, "utf8") : undefined))
+  : undefined;
 const connectionLimit = positiveInt(process.env.DB_CONNECTION_LIMIT, 10);
 const requestedIdle = Number(process.env.DB_MAX_IDLE ?? 5);
 const maxIdle = Math.min(connectionLimit - 1,
@@ -16,6 +23,7 @@ const pool = mysql.createPool({
   user: process.env.DB_USER || "wedding",
   password: process.env.DB_PASSWORD || "",
   database: process.env.DB_NAME || "wedding",
+  ssl: tls ? { rejectUnauthorized: true, verifyIdentity: true, ...(ca ? { ca } : {}) } : undefined,
   connectionLimit,
   // Queue in the application so timed-out waiters can actually be removed.
   waitForConnections: false,
