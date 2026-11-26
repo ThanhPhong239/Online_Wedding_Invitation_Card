@@ -14,6 +14,10 @@ app.set("trust proxy", 1);
 const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = path.join(__dirname, "public");
 const PUBLIC_BASE_URL = (process.env.PUBLIC_BASE_URL || "").trim().replace(/\/+$/, "");
+const rawAdminPath = (process.env.ADMIN_PATH || "/admin").trim().replace(/^\/+|\/+$/g, "");
+const ADMIN_PATH = rawAdminPath && !["api", "invite"].includes(rawAdminPath.toLowerCase())
+  ? `/${rawAdminPath}`
+  : "/admin";
 
 // One bounded TLS pool serves application queries and admin sessions.
 const db = require("./database");
@@ -70,6 +74,15 @@ app.use((req, res, next) => {
 });
 app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: false, limit: "16kb" }));
+
+// Block direct /admin.html access and legacy /admin when ADMIN_PATH is customized
+app.use((req, res, next) => {
+  const reqPath = req.path.toLowerCase();
+  if (reqPath === "/admin.html" || (ADMIN_PATH.toLowerCase() !== "/admin" && (reqPath === "/admin" || reqPath === "/admin/"))) {
+    return res.redirect(302, "/");
+  }
+  next();
+});
 
 // Static files with Cache-Control headers (0 in development to prevent stale browser cache)
 app.use(
@@ -699,7 +712,7 @@ async function sendGuestPage(req, res, guestName = "") {
   }
 }
 
-app.get("/admin", (req, res) => {
+app.get([ADMIN_PATH, `${ADMIN_PATH}/`], (req, res) => {
   res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
   res.sendFile(path.join(PUBLIC_DIR, "admin.html"));
 });
@@ -776,7 +789,7 @@ if (require.main === module) {
     console.log("==========================================");
     console.log(`🌸 Wedding Server running at http://localhost:${PORT}`);
     if (lanUrl) console.log(`📱 LAN Access     : ${lanUrl}`);
-    console.log(`🔑 Admin Login    : http://localhost:${PORT}/admin`);
+    console.log(`🔑 Admin Login    : http://localhost:${PORT}${ADMIN_PATH}`);
     console.log("🗄️  Database Mode  : Local MySQL");
     console.log("==========================================");
   });
