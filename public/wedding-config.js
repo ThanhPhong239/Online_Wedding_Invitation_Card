@@ -100,7 +100,7 @@ window.WEDDING_CONFIG = {
   // 5. Ô 05 — ALBUM ẢNH CƯỚI KHUNG POLAROID
   gallery: [
     {
-      src: "/images/DSC_1725.jpg",
+      src: "/images/DSC_1725.JPG",
       caption: "Khoảnh khắc nắm tay",
       rotStart: "-7deg",
       rotEnd: "-2deg",
@@ -110,7 +110,7 @@ window.WEDDING_CONFIG = {
       fallbackColors: ["#722F37", "#C5A880"]
     },
     {
-      src: "/images/DSC_2128.jpg",
+      src: "/images/DSC_2128.JPG",
       caption: "Nắng chiều dịu êm",
       rotStart: "6deg",
       rotEnd: "1.6deg",
@@ -120,7 +120,7 @@ window.WEDDING_CONFIG = {
       fallbackColors: ["#5D4648", "#C5A880"]
     },
     {
-      src: "/images/DSC_2137.jpg",
+      src: "/images/DSC_2137.JPG",
       caption: "Hoa trắng & lời hứa",
       rotStart: "-5deg",
       rotEnd: "-1.2deg",
@@ -130,7 +130,7 @@ window.WEDDING_CONFIG = {
       fallbackColors: ["#3A4649", "#B9986E"]
     },
     {
-      src: "/images/DSC_2153.jpg",
+      src: "/images/DSC_2153.JPG",
       caption: "Ánh mắt dịu dàng",
       rotStart: "7deg",
       rotEnd: "2.1deg",
@@ -140,7 +140,7 @@ window.WEDDING_CONFIG = {
       fallbackColors: ["#6B363D", "#D2B58F"]
     },
     {
-      src: "/images/DSC_2219.jpg",
+      src: "/images/DSC_2219.JPG",
       caption: "Bước chung một lối",
       rotStart: "-6deg",
       rotEnd: "-1.8deg",
@@ -150,7 +150,7 @@ window.WEDDING_CONFIG = {
       fallbackColors: ["#473B3E", "#C5A880"]
     },
     {
-      src: "/images/DSC_2329.jpg",
+      src: "/images/DSC_2329.JPG",
       caption: "Mãi bên nhau nhé",
       rotStart: "5deg",
       rotEnd: "1.4deg",
