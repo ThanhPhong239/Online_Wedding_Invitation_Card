@@ -4,7 +4,7 @@ window.WEDDING_CONFIG = {
   couple: {
     groomName: "Ngọc Long",
     groomFullName: "Ngô Ngọc Long",
-    brideName: "Bùi Loan",
+    brideName: "Thanh Loan",
     brideFullName: "Bùi Thị Thanh Loan",
     shortTitle: "Long & Loan",
     monogram: "L & L",
@@ -19,7 +19,7 @@ window.WEDDING_CONFIG = {
     heroBgImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80",
     heroFallbackImage: "/photo-placeholder.svg",
     inviteQuote:
-      "“Tình yêu đẹp nhất không phải là điểm đến hoàn hảo, mà là hành trình ta chọn nắm tay nhau đi qua mọi mùa nắng mưa. Ngọc Long & Bùi Loan vô cùng hạnh phúc được đón tiếp Quý vị đến chung vui trong ngày trọng đại của hai gia đình.”",
+      "“Tình yêu đẹp nhất không phải là điểm đến hoàn hảo, mà là hành trình ta chọn nắm tay nhau đi qua mọi mùa nắng mưa. Ngọc Long & Thanh Loan vô cùng hạnh phúc được đón tiếp Quý vị đến chung vui trong ngày trọng đại của hai gia đình.”",
     footerSub: "24 . 01 . 2027 — Forever Begins Here"
   },
 
@@ -68,7 +68,7 @@ window.WEDDING_CONFIG = {
     {
       date: "01 / 2027",
       title: "Chung Một Mái Nhà",
-      text: "Ngày 24.01.2027 — chương đẹp nhất của tình yêu chính thức bắt đầu. Ngọc Long & Bùi Loan trân trọng đón Quý vị đến chung vui và chúc phúc cho tổ ấm mới.",
+      text: "Ngày 24.01.2027 — chương đẹp nhất của tình yêu chính thức bắt đầu. Ngọc Long & Thanh Loan trân trọng đón Quý vị đến chung vui và chúc phúc cho tổ ấm mới.",
       side: "right",
       anim: 4,
       highlightTitle: true
@@ -100,7 +100,7 @@ window.WEDDING_CONFIG = {
   // 5. Ô 05 — ALBUM ẢNH CƯỚI KHUNG POLAROID
   gallery: [
     {
-      src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80",
+      src: "/images/DSC_1725.jpg",
       caption: "Khoảnh khắc nắm tay",
       rotStart: "-7deg",
       rotEnd: "-2deg",
@@ -110,7 +110,7 @@ window.WEDDING_CONFIG = {
       fallbackColors: ["#722F37", "#C5A880"]
     },
     {
-      src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=80",
+      src: "/images/DSC_2128.jpg",
       caption: "Nắng chiều dịu êm",
       rotStart: "6deg",
       rotEnd: "1.6deg",
@@ -120,7 +120,7 @@ window.WEDDING_CONFIG = {
       fallbackColors: ["#5D4648", "#C5A880"]
     },
     {
-      src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80",
+      src: "/images/DSC_2137.jpg",
       caption: "Hoa trắng & lời hứa",
       rotStart: "-5deg",
       rotEnd: "-1.2deg",
@@ -130,17 +130,17 @@ window.WEDDING_CONFIG = {
       fallbackColors: ["#3A4649", "#B9986E"]
     },
     {
-      src: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=700&q=80",
+      src: "/images/DSC_2153.jpg",
       caption: "Ánh mắt dịu dàng",
       rotStart: "7deg",
       rotEnd: "2.1deg",
       delay: "0.30s",
       fallbackTitle: "Ánh Mắt Dịu Dàng",
-      fallbackSubtitle: "NGOC LONG & BUI LOAN",
+      fallbackSubtitle: "NGOC LONG & THANH LOAN",
       fallbackColors: ["#6B363D", "#D2B58F"]
     },
     {
-      src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=700&q=80",
+      src: "/images/DSC_2219.jpg",
       caption: "Bước chung một lối",
       rotStart: "-6deg",
       rotEnd: "-1.8deg",
@@ -150,7 +150,7 @@ window.WEDDING_CONFIG = {
       fallbackColors: ["#473B3E", "#C5A880"]
     },
     {
-      src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80",
+      src: "/images/DSC_2329.jpg",
       caption: "Mãi bên nhau nhé",
       rotStart: "5deg",
       rotEnd: "1.4deg",
@@ -178,14 +178,14 @@ window.WEDDING_CONFIG = {
     {
       side: "right",
       tag: "Mừng Cưới Nhà Gái",
-      roleTitle: "Cô Dâu Bùi Loan",
+      roleTitle: "Cô Dâu Thanh Loan",
       bankName: "Ngân Hàng Techcombank",
       accountNumber: "0987654321",
       accountDisplay: "0987 6543 21",
       accountHolder: "BUI THI THANH LOAN",
       qrImageUrl: "", // Có thể điền link ảnh VietQR thật
       qrAccentCorner: "top-right",
-      copySuccessMsg: "Đã sao chép STK cô dâu Bùi Loan!"
+      copySuccessMsg: "Đã sao chép STK cô dâu Thanh Loan!"
     }
   ],
 

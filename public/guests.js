@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     couple: {
       groomName: "Ngọc Long",
       groomFullName: "Nguyễn Ngọc Long",
-      brideName: "Bùi Loan",
+      brideName: "Thanh Loan",
       brideFullName: "Bùi Thị Loan",
       shortTitle: "Long & Loan",
       monogram: "L & L",
@@ -956,9 +956,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  /* --- Ô 03: Trục dọc Timeline tự vẽ & Nút Replay --- */
-  let tlReplayTimers = [];
-
+  /* --- Ô 03: Trục dọc Timeline tự vẽ --- */
   function updateTimelineAxisProgress() {
     if (!timelineContainer || !timelineAxisFill) return;
     const rect = timelineContainer.getBoundingClientRect?.();
@@ -971,32 +969,6 @@ document.addEventListener("DOMContentLoaded", () => {
     timelineAxisFill.style.transform = isDesktop
       ? `translateX(-50%) scaleY(${progress.toFixed(3)})`
       : `scaleY(${progress.toFixed(3)})`;
-  }
-
-  const btnReplayTimeline = document.getElementById("btnReplayTimeline");
-  if (btnReplayTimeline) {
-    btnReplayTimeline.addEventListener("click", () => {
-      tlReplayTimers.forEach((id) => clearTimeout(id));
-      tlReplayTimers = [];
-      timelineItems.forEach((item) => item.classList.remove("tl-visible"));
-      const isDesktop = (window.innerWidth || 1024) >= 768;
-      if (timelineAxisFill) {
-        timelineAxisFill.style.transform = isDesktop ? "translateX(-50%) scaleY(0)" : "scaleY(0)";
-      }
-      timelineItems.forEach((item, index) => {
-        const tId = setTimeout(() => {
-          item.classList.add("tl-visible");
-          const pct = ((index + 1) / Math.max(timelineItems.length, 1)).toFixed(2);
-          const desktopNow = (window.innerWidth || 1024) >= 768;
-          if (timelineAxisFill) {
-            timelineAxisFill.style.transform = desktopNow
-              ? `translateX(-50%) scaleY(${pct})`
-              : `scaleY(${pct})`;
-          }
-        }, 220 + index * 460);
-        tlReplayTimers.push(tId);
-      });
-    });
   }
 
   /* =========================================================

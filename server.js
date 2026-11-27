@@ -709,7 +709,7 @@ async function sendGuestPage(req, res, guestName = "") {
       );
 
     if (guestName) {
-      const shareTitle = escapeHtmlAttr(`Trân trọng kính mời ${guestName} — Thiệp Cưới Ngọc Long & Bùi Loan`);
+      const shareTitle = escapeHtmlAttr(`Trân trọng kính mời ${guestName} — Thiệp Cưới Ngọc Long & Thanh Loan`);
       html = html
         .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${shareTitle}" />`)
         .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${shareTitle}" />`)
