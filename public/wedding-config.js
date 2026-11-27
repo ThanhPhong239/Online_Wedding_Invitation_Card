@@ -16,7 +16,7 @@ window.WEDDING_CONFIG = {
     weddingIso: "2027-01-24T13:00:00+07:00",
     rsvpDeadline: "10/10/2027",
     heroLocationTagline: "Cùng nhau viết tiếp chương hạnh phúc trọn vẹn nhất",
-    heroBgImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80",
+    heroBgImage: "/images/Ảnh1.jpg",
     heroFallbackImage: "/photo-placeholder.svg",
     inviteQuote:
       "“Tình yêu đẹp nhất không phải là điểm đến hoàn hảo, mà là hành trình ta chọn nắm tay nhau đi qua mọi mùa nắng mưa. Ngọc Long & Thanh Loan vô cùng hạnh phúc được đón tiếp Quý vị đến chung vui trong ngày trọng đại của hai gia đình.”",
